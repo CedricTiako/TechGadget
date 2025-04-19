@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import defaultCategoryImg from '../../assets/default-category.png';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Save, Image, Loader } from 'lucide-react';
 import Button from '../../components/ui/Button';
