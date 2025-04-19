@@ -115,11 +115,15 @@ export default function Home() {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {categories.slice(0, 6).map((cat) => (
-                <div key={cat.id} className="relative rounded-lg overflow-hidden shadow-lg group">
+                <div
+                  key={cat.id}
+                  className="relative group rounded-lg overflow-hidden shadow hover:shadow-lg transition cursor-pointer"
+                  style={{ minHeight: 180 }}
+                >
                   <img
-                    src={cat.image_url || '/default-category.jpg'}
+                    src={cat.image_url ? cat.image_url : require('../assets/default-category.png')}
                     alt={cat.name}
-                    className="w-full h-40 object-cover"
+                    className="absolute inset-0 w-full h-full object-cover object-center aspect-square opacity-80 group-hover:opacity-100 transition"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end">
                     <div className="p-4 w-full">

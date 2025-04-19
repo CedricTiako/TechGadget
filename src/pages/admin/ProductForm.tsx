@@ -177,7 +177,7 @@ export default function ProductForm() {
               />
               
               <Input
-                label="Prix (XAF)"
+                label="Prix (FCFA)"
                 id="price"
                 type="number"
                 step="0.01"

@@ -17,6 +17,11 @@ export default function AdminSidebar() {
       path: '/admin/products',
     },
     {
+      name: 'Catégories',
+      icon: <Settings size={20} />, // Tu peux changer l’icône si tu veux
+      path: '/admin/categories',
+    },
+    {
       name: 'Paramètres',
       icon: <Settings size={20} />,
       path: '/admin/settings',

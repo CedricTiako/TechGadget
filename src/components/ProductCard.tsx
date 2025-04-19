@@ -21,12 +21,7 @@ export default function ProductCard({ id, name, price, description, category_id,
   const categoryName = categories.find(cat => cat.id === category_id)?.name || '(Non catégorisé)';
   const { addToCart } = useCart();
   
-  const formattedPrice = new Intl.NumberFormat('fr-CM', {
-    style: 'currency',
-    currency: 'XAF',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(price);
+  const formattedPrice = `${price.toLocaleString('fr-CM', { minimumFractionDigits: 0 })} FCFA`;
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:translate-y-[-4px] hover:shadow-lg">
@@ -36,9 +31,7 @@ export default function ProductCard({ id, name, price, description, category_id,
             src={getImageUrl(imageUrl)}
             alt={name}
             loading="lazy"
-            width="320"
-            height="192"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center aspect-square"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gray-200">

@@ -127,13 +127,18 @@ export default function Catalog() {
               {categories.map((cat) => (
                 <button
                   key={cat.id}
-                  className={`px-4 py-2 rounded-full mr-2 mb-2 border transition-colors duration-200 ${
+                  className={`px-4 py-2 rounded-full mr-2 mb-2 border flex items-center gap-2 transition-colors duration-200 ${
                     selectedCategory === cat.id
                       ? 'bg-[#25d366] text-white border-[#25d366]'
                       : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
                   }`}
                   onClick={() => handleCategoryChange(cat.id)}
                 >
+                  <img
+                    src={cat.image_url ? cat.image_url : require('../assets/default-category.png')}
+                    alt={cat.name}
+                    className="w-6 h-6 rounded-full object-cover object-center aspect-square border"
+                  />
                   {cat.name}
                 </button>
               ))}

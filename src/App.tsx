@@ -16,6 +16,7 @@ import AdminLogin from './pages/admin/Login';
 import AdminProducts from './pages/admin/Products';
 import AdminProductForm from './pages/admin/ProductForm';
 import Settings from './pages/admin/Settings';
+import CategoriesAdmin from './pages/admin/Categories';
 import WhatsAppButton from './components/WhatsAppButton';
 import FAQ from './pages/FAQ';
 
@@ -57,6 +58,7 @@ function App() {
               <Route path="products/new" element={<AdminProductForm />} />
               <Route path="products/:id" element={<AdminProductForm />} />
               <Route path="settings" element={<Settings />} />
+              <Route path="categories" element={<CategoriesAdmin />} />
             </Route>
 
             {/* 404 Route */}

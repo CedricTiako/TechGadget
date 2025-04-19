@@ -19,10 +19,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
       .map(item => `${item.product.name} (x${item.quantity})`)
       .join('\n');
     
-    const totalMessage = `\n\nTotal: ${new Intl.NumberFormat('fr-CM', {
-      style: 'currency',
-      currency: 'XAF'
-    }).format(total)}`;
+    const totalMessage = `\n\nTotal: ${total.toLocaleString('fr-CM', { minimumFractionDigits: 0 })} FCFA`;
 
     const whatsappNumber = settings?.whatsapp || '+237695959595';
     const whatsappMessage = encodeURIComponent(`Bonjour, je souhaite commander :\n${message}${totalMessage}`);
@@ -123,10 +120,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
               <div className="flex justify-between items-center">
                 <span className="font-semibold">Total</span>
                 <span className="font-semibold">
-                  {new Intl.NumberFormat('fr-CM', {
-                    style: 'currency',
-                    currency: 'XAF'
-                  }).format(total)}
+                  {`${total.toLocaleString('fr-CM', { minimumFractionDigits: 0 })} FCFA`}
                 </span>
               </div>
               <div className="space-y-2">

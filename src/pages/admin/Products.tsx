@@ -30,14 +30,7 @@ export default function AdminProducts() {
     setDeleteModalProduct(null);
   };
 
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('fr-CM', {
-      style: 'currency',
-      currency: 'XAF',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(price);
-  };
+  const formatPrice = (price: number) => `${price.toLocaleString('fr-CM', { minimumFractionDigits: 0 })} FCFA`;
 
   return (
     <div>

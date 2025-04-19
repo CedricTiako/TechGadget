@@ -30,10 +30,10 @@ export function useCategories() {
   };
 
   // Add a new category
-  const addCategory = async (name: string) => {
+  const addCategory = async (name: string, image_url?: string) => {
     const { data, error } = await supabase
       .from('categories')
-      .insert([{ name }])
+      .insert([{ name, image_url: image_url || null }])
       .select()
       .single();
     if (error) throw error;
@@ -42,10 +42,10 @@ export function useCategories() {
   };
 
   // Update a category
-  const updateCategory = async (id: string, name: string) => {
+  const updateCategory = async (id: string, name: string, image_url?: string) => {
     const { error } = await supabase
       .from('categories')
-      .update({ name })
+      .update({ name, image_url: image_url || null })
       .eq('id', id);
     if (error) throw error;
     await fetchCategories();
