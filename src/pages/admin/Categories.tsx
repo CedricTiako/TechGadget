@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import defaultCategoryImg from '../../assets/default-category.png';
 import { useCategories } from '../../hooks/useCategories';
 
 export default function CategoriesAdmin() {
@@ -118,7 +119,7 @@ export default function CategoriesAdmin() {
                       <img src={cat.image_url} alt={cat.name} className="w-8 h-8 rounded-full object-cover border" />
                     )}
                     <img
-                      src={cat.image_url ? cat.image_url : require('../../assets/default-category.png')}
+                      src={cat.image_url ? cat.image_url : defaultCategoryImg}
                       alt={cat.name}
                       className="w-10 h-10 rounded-full object-cover object-center aspect-square mr-2 border"
                     />

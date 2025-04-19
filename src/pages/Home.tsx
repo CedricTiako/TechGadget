@@ -1,3 +1,5 @@
+import React from 'react';
+import defaultCategoryImg from '../assets/default-category.png';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ShoppingCart, ChevronRight } from 'lucide-react';
@@ -121,7 +123,7 @@ export default function Home() {
                   style={{ minHeight: 180 }}
                 >
                   <img
-                    src={cat.image_url ? cat.image_url : require('../assets/default-category.png')}
+                    src={cat.image_url ? cat.image_url : defaultCategoryImg}
                     alt={cat.name}
                     className="absolute inset-0 w-full h-full object-cover object-center aspect-square opacity-80 group-hover:opacity-100 transition"
                   />

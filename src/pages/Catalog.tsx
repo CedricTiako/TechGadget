@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import defaultCategoryImg from '../assets/default-category.png';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 import { Search, Filter } from 'lucide-react';
@@ -135,7 +136,7 @@ export default function Catalog() {
                   onClick={() => handleCategoryChange(cat.id)}
                 >
                   <img
-                    src={cat.image_url ? cat.image_url : require('../assets/default-category.png')}
+                    src={cat.image_url ? cat.image_url : defaultCategoryImg}
                     alt={cat.name}
                     className="w-6 h-6 rounded-full object-cover object-center aspect-square border"
                   />
